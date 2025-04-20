@@ -106,7 +106,7 @@ def ataque_frequencia(texto_cifrado: str, max_chave: int = 20) -> list:
     return candidatos_ordenados[:5]
 
 # exemplo
-texto_original = "a criptografia por transposição é um método de segurança"
+texto_original = "criptografar um texto grande só pra testar a transposição e os ataques de força bruta e frequência :)"
 chave = 4
 
 # Cifração
