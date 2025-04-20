@@ -47,17 +47,17 @@ def ataque_frequencia(texto_cifrado: str) -> int:
     frequencias_obs = {letra: (cont / total_letras) * 100 
                       for letra, cont in contagem.items()}
     
-    melhor_score = -1
+    melhor_teste = -1
     melhor_chave = 0
     
     for k in range(26):
-        score = 0
+        teste = 0
         for letra_cifrada, freq_obs in frequencias_obs.items():
             letra_original = chr((ord(letra_cifrada) - ord('a') - k) % 26 + ord('a'))
-            score += freq_obs * FREQUENCIAS_PORTUGUES.get(letra_original, 0)
+            teste += freq_obs * FREQUENCIAS_PORTUGUES.get(letra_original, 0)
         
-        if score > melhor_score:
-            melhor_score = score
+        if teste > melhor_teste:
+            melhor_teste = teste
             melhor_chave = k
     
     print(f"\nAtaque por frequência - Melhor chave encontrada: {melhor_chave}")
